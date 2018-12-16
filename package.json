@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-dva-hmr",
+  "name": "babel-plugin-dionid-dva-hmr",
   "version": "0.4.1",
   "description": "Hmr plugin for dva.",
   "main": "lib/index.js",
