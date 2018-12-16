@@ -185,7 +185,7 @@ export default function ({ types:t }) {
         },
       },
       CallExpression(path, { opts }) {
-        const { filename } = path.hub.file.opts;
+        const {filename} = (path && path.hub && path.hub.file && path.hub.file.opts) || (state && state.file);
         if (cache[filename]) return;
         const { callee, arguments: args } = path.node;
         if (isRouterCall(callee, path.scope)) {
