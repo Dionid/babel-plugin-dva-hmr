@@ -184,7 +184,8 @@ export default function ({ types:t }) {
           delete cache[filename];
         },
       },
-      CallExpression(path, { opts }) {
+      CallExpression(path, state) {
+        const { opts } = state;
         const {filename} = (path && path.hub && path.hub.file && path.hub.file.opts) || (state && state.file);
         if (cache[filename]) return;
         const { callee, arguments: args } = path.node;
